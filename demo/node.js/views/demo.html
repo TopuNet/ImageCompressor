@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>ImageCompressor</title>
+    <link href="/inc/jquery.Jcrop.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div>
+        <h1>图片上传</h1>
+        <input type="file" id="f1" />
+        <form action="/show" id="img_form" enctype="application/x-www-form-urlencoded" method="post" onsubmit="return ImageCompressor.canBePost">
+            <input type="hidden" class="img64" name="img64" />
+            <input type="hidden" class="ext" name="ext" />
+            <br />
+            <input type="submit" />
+        </form>
+        <br /><img id="Crop_img_panel" style="display:none;" />
+    </div>
+    <canvas id="canvas1"></canvas>
+    <script src="/inc/jquery.min.js" type="text/javascript"></script>
+    <script src="/inc/Always.js" type="text/javascript"></script>
+    <script src="/jq/ImageCompressor.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(function() {
+        ImageCompressor.init({
+            file_id: "f1", //文件域的id名
+            Crop_img_id: "Crop_img_panel", //图片装载容器（即三.4中包含的img）的id名
+            form_id: "img_form", //form的id名，为空时指向页面中第一个form，不建议为空
+            quality: 300, //压缩至KB
+            img_p_width_px: 400, //图片容器最大宽度
+            img_p_height_px: 270, //图片容器最大高度
+            crop_target_width_px: 1000, //最终剪切目标宽度
+            crop_target_height_px: 670, //最终剪切目标高度
+            callback_fileSelect: function() {} //选择图片后的回调
+        });
+    });
+    </script>
+</body>
+
+</html>
