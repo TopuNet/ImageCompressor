@@ -1,4 +1,4 @@
-# ImageCompressor JS插件 v1.1.1
+# ImageCompressor JS插件 v1.1.3
 ###表单中上传图像后 裁剪 & 压缩 & 提交64base编码图像
 
 更新说明：

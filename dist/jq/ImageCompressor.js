@@ -4,7 +4,7 @@ includeJS("/inc/jquery.Jcrop.min.js");
 /*
  * 高京
  * 20151125
- * 图片剪切压缩类 v1.1.2
+ * 图片剪切压缩类 v1.1.3
  */
 var ImageCompressor = {
     exif: null,
