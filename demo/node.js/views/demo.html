@@ -31,25 +31,25 @@
             file_id: "f1", //文件域的id名
             Crop_img_id: "Crop_img_panel", //图片装载容器（即三.4中包含的img）的id名
             form_id: "img_form", //form的id名，为空时指向页面中第一个form，不建议为空
-            quality: 30, //压缩至KB
+            quality: 100, //压缩至KB
             img_p_width_px: 400, //图片容器最大宽度
-            img_p_height_px: 270, //图片容器最大高度
-            crop_target_width_px: 1000, //最终剪切目标宽度
-            crop_target_height_px: 670, //最终剪切目标高度
+            img_p_height_px: 400, //图片容器最大高度
+            crop_target_width_px: 200, //最终剪切目标宽度
+            crop_target_height_px: 200, //最终剪切目标高度
             callback_fileSelect: function() {} //选择图片后的回调
         });
 
 
         //单独调用压缩方法
-        var img = new Image();
-        img.src = "/views/4M.jpg";
+        // var img = new Image();
+        // img.src = "/views/4M.jpg";
 
-        imgLoad(img.src, "", function() {
-            var quality = 30; //压缩至KB
-            ImageCompressor.Compress(img, quality, function(_img) {
-                $("#Crop_img_panel").attr("src", _img).css("width", "600px").show();
-            });
-        }, false);
+        // imgLoad(img.src, "", function() {
+        //     var quality = 300; //压缩至KB
+        //     ImageCompressor.Compress(img, quality, function(_img) {
+        //         $("#Crop_img_panel").attr("src", _img).css("width", "100vw").show();
+        //     });
+        // }, false);
 
 
     });
